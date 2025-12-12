@@ -1,6 +1,6 @@
 import { useEffect, useRef } from "react"
 
-export const RevealOnScroll = ( {children} ) => {
+export const RevealOnScroll = ( {children, className = ""} ) => {
 
     const ref = useRef(null);
     useEffect(() => {
@@ -15,5 +15,5 @@ export const RevealOnScroll = ( {children} ) => {
     }
     return () => observer.disconnect();
 });
-    return <div ref={ref} className="reveal"> {children} </div>
+    return <div ref={ref} className={`reveal w-full flex flex-col items-center ${className}`}> {children} </div>
 }

@@ -5,8 +5,10 @@ import { Navbar } from './components/Navbar'
 import { MobileMenu } from './components/MobileMenu'
 import { Home } from './components/sections/Home'
 import { About } from './components/sections/About'
+import { Certifications } from './components/sections/Certifications'
 import { Projects } from './components/sections/Projects'
 import { Contact } from './components/sections/Contact'
+import { Footer } from './components/sections/Footer'
 import './index.css'
 
 function App() {
@@ -24,8 +26,10 @@ function App() {
         <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
         <Home />
         <About />
+        <Certifications />
         <Projects />
         <Contact />
+        <Footer />
       </div>
    </>
   )

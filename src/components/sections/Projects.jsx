@@ -1,13 +1,15 @@
 import { useState } from 'react';
 import { RevealOnScroll } from '../RevealOnScroll';
-
+import sentishopLogo from '/project-logo/sentishop-logo.png';
+import geometryDashLogo from '/project-logo/geometry-dash.png';
+import stockScraperLogo from '/project-logo/stock_scraper-demo.png';
 export const Projects = () => {
     const projects = [
         {
             id: 1,
             title: "SentiShop: Multilingual Sentiment Analysis and Extractive Summarization of Lazada Product Reviews",
             description: "A web app that analyzes Lazada product reviews in English, Tagalog, and Taglish. It uses a fine-tuned XLM-RoBERTa for sentiment analysis and TextRank for summarization, helping users quickly grasp key insights.",
-            image: "project-logo/sentishop-logo.png",
+            image: sentishopLogo,
             technologies: ["Python", "Django", "XLM-RoBERTa", "NLP"],
             githubUrl: "https://github.com/The-Thesis-Gods/SentiShop"
         },
@@ -15,7 +17,7 @@ export const Projects = () => {
             id: 2,
             title: "Geometry Dash Imitation Game",
             description: "An imitation of geometry dash developed in C++ using the freeglut library",
-            image: "project-logo/geometry-dash.png",
+            image: geometryDashLogo,
             technologies: ["C++", "OpenGL", "FreeGLUT"],
             githubUrl: "https://github.com/Reverenciaa/geometry-dash-imitation"
         },
@@ -23,7 +25,7 @@ export const Projects = () => {
             id: 3,
             title: "Stock Scraper",
             description: "A python script that automatically scrapes stock and crypto data using yfinance and BeautifulSoup",
-            image: "project-logo/stock_scraper-demo.png",
+            image: stockScraperLogo,
             technologies: ["Python", "yfinance", "BeautifulSoup"],
             githubUrl: "https://github.com/Reverenciaa/stock-data-scraper"
         },
@@ -51,7 +53,7 @@ export const Projects = () => {
         <section id="projects" className="min-h-screen flex items-center justify-center py-20">
             <RevealOnScroll>
                 <div className="max-w-6xl mx-auto px-4">
-                    <h2 className="text-3xl font-bold mb-12 bg-gradient-to-r from-yellow-500 to-fuchsia-600 bg-clip-text text-transparent text-center">
+                    <h2 className="text-4xl font-bold mb-12 bg-gradient-to-r from-yellow-500 to-fuchsia-600 bg-clip-text text-transparent text-center">
                         Featured Projects
                     </h2>
                     

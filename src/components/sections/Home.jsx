@@ -17,9 +17,9 @@ export const Home = () => {
                     <a href="#projects" className="bg-yellow-600 text-white py-3 px-6 rounded font-medium transition relative overflow-hidden hover:-translate-y-0.5 
                     hover:shadow-[0_0_15px_rgba(59,130,246,0.4)]">
                         View Projects</a>
-                    <a href="#contact" className="border border-yellow-600/50 text-yellow-500 py-3 px-6 rounded font-medium transition-all duration-200  
+                    <a href="/professional-portfolio/Labios_Resume.pdf" target="_blank" rel="noopener noreferrer" className="border border-yellow-600/50 text-yellow-500 py-3 px-6 rounded font-medium transition-all duration-200  
                     hover:-translate-y-0.5 hover:shadow-[0_0_15px_rgba(59,130,246,0.2)] hover:bg-yellow-500/10">
-                        Contact Me</a>                  
+                        My Resume</a>                  
                 </div>
             </div>
             </RevealOnScroll>
