@@ -70,13 +70,13 @@ export const Certifications = () => {
 
             <div className="flex flex-row gap-6 mt-12">
                 <button
-                className="text-white bg-indigo-400 rounded-lg py-4 px-8 text-lg font-medium hover:bg-indigo-500 transition-colors"
+                className="text-white bg-yellow-400 rounded-lg py-4 px-8 text-lg font-medium hover:bg-fuchsia-500 transition-colors"
                 onClick={handleBack}
                 >
                 Back
                 </button>
                 <button
-                className="text-white bg-indigo-400 rounded-lg py-4 px-8 text-lg font-medium hover:bg-indigo-500 transition-colors"
+                className="text-white bg-yellow-400 rounded-lg py-4 px-8 text-lg font-medium hover:bg-fuchsia-500 transition-colors"
                 onClick={handleNext}
                 >
                 Next
