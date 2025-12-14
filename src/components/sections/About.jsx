@@ -35,19 +35,19 @@ export const About = () => {
 
     return (
         <>
-            <section id="about" className="min-h-screen flex items-center justify-center py-20">
+            <section id="about" className="min-h-screen flex items-center justify-center py-16 md:py-20 px-4">
                 <RevealOnScroll>
-                    <div className="max-w-6xl mx-auto px-4">
-                        <h2 className="text-4xl font-bold mb-8 bg-gradient-to-r from-yellow-500 to-fuchsia-600 bg-clip-text text-transparent text-center">
+                    <div className="max-w-6xl mx-auto">
+                        <h2 className="text-2xl md:text-4xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-yellow-500 to-fuchsia-600 bg-clip-text text-transparent text-center">
                             About Me
                         </h2>
 
-                        <div className="glass rounded-xl p-8 border-white/10 border hover:-translate-y-1 transition-all mb-8">
-                            <p className="text-gray-300 mb-8 text-center text-lg">
+                        <div className="glass rounded-xl p-4 md:p-8 border-white/10 border hover:-translate-y-1 transition-all mb-6 md:mb-8">
+                            <p className="text-gray-300 mb-6 md:mb-8 text-center text-base md:text-lg">
                                 An aspiring software engineer with a passion for back-end programming and web development to create scalable applications and innovative solutions.
                             </p>
                             
-                            <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+                            <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-8">
                                 <div className="rounded-xl p-6 hover:-translate-y-1 transition-all">
                                     <h3 className="text-xl font-bold mb-4 bg-gradient-to-r from-yellow-500 to-fuchsia-500 bg-clip-text text-transparent">
                                         Frontend
@@ -78,11 +78,11 @@ export const About = () => {
                 </RevealOnScroll>
             </section>
 
-            <section id="education" className="min-h-screen flex items-center justify-center py-20">
+            <section id="education" className="min-h-screen flex items-center justify-center py-16 md:py-20 px-4">
                 <RevealOnScroll>
-                    <div className="max-w-4xl mx-auto px-4">
-                        <h2 className="text-4xl font-bold mb-12 bg-gradient-to-r from-yellow-500 to-purple-500 bg-clip-text text-transparent text-center flex items-center justify-center gap-3">
-                            <span className="text-4xl">🎓</span>
+                    <div className="max-w-4xl mx-auto">
+                        <h2 className="text-2xl md:text-4xl font-bold mb-8 md:mb-12 bg-gradient-to-r from-yellow-500 to-purple-500 bg-clip-text text-transparent text-center flex items-center justify-center gap-2 md:gap-3">
+                            <span className="text-2xl md:text-4xl">🎓</span>
                             Education
                         </h2>
                         
@@ -123,15 +123,15 @@ export const About = () => {
                 </RevealOnScroll>
             </section>
 
-            <section id="work-experience" className="min-h-screen flex items-center justify-center py-20">
+            <section id="work-experience" className="min-h-screen flex items-center justify-center py-16 md:py-20 px-4">
                 <RevealOnScroll>
-                    <div className="max-w-6xl mx-auto px-4">
-                        <h2 className="text-4xl font-bold mb-12 bg-gradient-to-r from-yellow-500 to-purple-500 bg-clip-text text-transparent text-center flex items-center justify-center gap-3">
-                            <span className="text-4xl">💼</span>
+                    <div className="max-w-6xl mx-auto">
+                        <h2 className="text-2xl md:text-4xl font-bold mb-8 md:mb-12 bg-gradient-to-r from-yellow-500 to-purple-500 bg-clip-text text-transparent text-center flex items-center justify-center gap-2 md:gap-3">
+                            <span className="text-2xl md:text-4xl">💼</span>
                             Work Experience
                         </h2>
                         
-                        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 max-w-5xl mx-auto">
+                        <div className="grid grid-cols-1 md:grid-cols-2 gap-4 md:gap-6 max-w-5xl mx-auto">
                             {workExperience?.map((job, index) => (
                                 <div key={job.id} className="p-6 rounded-xl border-white/10 border hover:-translate-y-1 transition-all glass h-84 flex flex-col"> 
                                     <div className="bg-black/20 rounded-lg p-4 border border-yellow-500/20 mb-4 flex-shrink-0"> 
