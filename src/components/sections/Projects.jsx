@@ -1,37 +1,27 @@
-import { useState } from 'react';
 import { RevealOnScroll } from '../RevealOnScroll';
-import sentishopLogo from '/project-logo/sentishop-logo.png';
-import geometryDashLogo from '/project-logo/geometry-dash.png';
-import stockScraperLogo from '/project-logo/stock_scraper-demo.png';
-export const Projects = () => {
-    const projects = [
-        {
-            id: 1,
-            title: "SentiShop: Multilingual Sentiment Analysis and Extractive Summarization of Lazada Product Reviews",
-            description: "A web app that analyzes Lazada product reviews in English, Tagalog, and Taglish. It uses a fine-tuned XLM-RoBERTa for sentiment analysis and TextRank for summarization, helping users quickly grasp key insights.",
-            image: sentishopLogo,
-            technologies: ["Python", "Django", "XLM-RoBERTa", "NLP"],
-            githubUrl: "https://github.com/The-Thesis-Gods/SentiShop"
-        },
-        {
-            id: 2,
-            title: "Geometry Dash Imitation Game",
-            description: "An imitation of geometry dash developed in C++ using the freeglut library",
-            image: geometryDashLogo,
-            technologies: ["C++", "OpenGL", "FreeGLUT"],
-            githubUrl: "https://github.com/Reverenciaa/geometry-dash-imitation"
-        },
-        {
-            id: 3,
-            title: "Stock Scraper",
-            description: "A python script that automatically scrapes stock and crypto data using yfinance and BeautifulSoup",
-            image: stockScraperLogo,
-            technologies: ["Python", "yfinance", "BeautifulSoup"],
-            githubUrl: "https://github.com/Reverenciaa/stock-data-scraper"
-        },
-    ];
+import { useState, useEffect } from 'react';
+import { getProjects } from '../../services/api';
 
+export const Projects = () => {
+
+    const [projects, setProjects] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
+    const [loading, setLoading] = useState(true);
+
+    useEffect(() => {
+        const fetchProjects = async () => {
+            try{
+                const projectData = await getProjects();
+                setProjects(projectData);
+            }
+            catch (error) {
+                console.error("Error fetching projects:", error);
+            } finally {
+                setLoading(false);
+            }
+        };
+        fetchProjects();
+    }, []);
 
     const nextSlide = () => {
         setCurrentIndex((prevIndex) => 
@@ -48,6 +38,16 @@ export const Projects = () => {
     const goToSlide = (index) => {
         setCurrentIndex(index);
     };
+
+    if(loading){
+        return (
+            <section id="projects" className="min-h-screen flex items-center justify-center">
+                <div className='text-xl'>
+                    Loading projects...
+                </div>
+            </section>
+        );
+    }
 
     return (
         <section id="projects" className="min-h-screen flex items-center justify-center py-20">
@@ -67,7 +67,6 @@ export const Projects = () => {
                                     <div key={project.id} className="w-full flex-shrink-0">
                                         <div className="glass rounded-xl p-8 border-white/10 border hover:border-white/20 transition-all mx-2">
                                             <div className="grid md:grid-cols-2 gap-8 items-center">
-                                                {/* Project Image */}
                                                 <div className="relative group">
                                                     <img 
                                                         src={project.image} 
@@ -76,8 +75,6 @@ export const Projects = () => {
                                                     />
                                                     <div className="absolute inset-0 bg-gradient-to-t from-black/50 to-transparent rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
                                                 </div>
-
-                                                {/* Project Details */}
                                                 <div className="space-y-4">
                                                     <h3 className="text-2xl font-bold text-white">
                                                         {project.title}
@@ -85,8 +82,6 @@ export const Projects = () => {
                                                     <p className="text-gray-300 leading-relaxed">
                                                         {project.description}
                                                     </p>
-
-                                                    {/* Technologies */}
                                                     <div className="flex flex-wrap gap-2">
                                                         {project.technologies.map((tech, index) => (
                                                             <span 
@@ -97,8 +92,6 @@ export const Projects = () => {
                                                             </span>
                                                         ))}
                                                     </div>
-
-                                                    {/* Action Buttons */}
                                                     <div className="flex gap-4 pt-4">
                                                         <a 
                                                             href={project.githubUrl}
@@ -117,7 +110,6 @@ export const Projects = () => {
                             </div>
                         </div>
 
-                        {/* Navigation Arrows */}
                         <button 
                             onClick={prevSlide}
                             className="absolute left-4 top-1/2 -translate-y-1/2 w-12 h-12 bg-white/10 backdrop-blur-sm border border-white/20 rounded-full flex items-center justify-center text-white hover:bg-white/20 transition-all duration-300 z-10"
@@ -135,7 +127,6 @@ export const Projects = () => {
                             </svg>
                         </button>
 
-                        {/* Dots Indicator */}
                         <div className="flex justify-center mt-8 space-x-3">
                             {projects.map((_, index) => (
                                 <button
