@@ -12,8 +12,6 @@ export const About = () => {
             try {
                 const skillsData = await getSkills();
                 const workData = await getWorkExperience();
-                console.log("Fetched skills:", skillsData);
-                console.log("Fetched work experience:", workData);
                 setSkills(skillsData);
                 setWorkExperience(workData);
             } catch (error) {
@@ -35,7 +33,7 @@ export const About = () => {
 
     return (
         <>
-            <section id="about" className="min-h-screen flex items-center justify-center py-16 md:py-20 px-4">
+            <section id="about" className="min-h-screen flex items-center justify-center py-16 md:py-20 px-4 snap-start">
                 <RevealOnScroll>
                     <div className="max-w-6xl mx-auto">
                         <h2 className="text-2xl md:text-4xl font-bold mb-6 md:mb-8 bg-gradient-to-r from-yellow-500 to-fuchsia-600 bg-clip-text text-transparent text-center">
@@ -78,7 +76,7 @@ export const About = () => {
                 </RevealOnScroll>
             </section>
 
-            <section id="education" className="min-h-screen flex items-center justify-center py-16 md:py-20 px-4">
+            <section id="education" className="min-h-screen flex items-center justify-center py-16 md:py-20 px-4 snap-start">
                 <RevealOnScroll>
                     <div className="max-w-4xl mx-auto">
                         <h2 className="text-2xl md:text-4xl font-bold mb-8 md:mb-12 bg-gradient-to-r from-yellow-500 to-purple-500 bg-clip-text text-transparent text-center flex items-center justify-center gap-2 md:gap-3">
@@ -123,7 +121,7 @@ export const About = () => {
                 </RevealOnScroll>
             </section>
 
-            <section id="work-experience" className="min-h-screen flex items-center justify-center py-16 md:py-20 px-4">
+            <section id="work-experience" className="min-h-screen flex items-center justify-center py-16 md:py-20 px-4 snap-start">
                 <RevealOnScroll>
                     <div className="max-w-6xl mx-auto">
                         <h2 className="text-2xl md:text-4xl font-bold mb-8 md:mb-12 bg-gradient-to-r from-yellow-500 to-purple-500 bg-clip-text text-transparent text-center flex items-center justify-center gap-2 md:gap-3">

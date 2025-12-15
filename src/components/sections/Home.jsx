@@ -3,7 +3,7 @@ import { useState, useEffect } from "react";
 import { getProfile } from "../../services/api";
 
 export const Home = () => {
-    const [profile, setProfile] = useState([]);
+    const [profile, setProfile] = useState(null);
     const [loading, setLoading] = useState(true);
 
     useEffect(() => {

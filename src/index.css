@@ -49,3 +49,9 @@ html, body{
   opacity: 1;
   transform: translateY(0);
 }
+
+.circle{
+  width: 600px;
+  height: 600px;
+  background-color: linear-gradient(to bottom, #f400a1, #ffd300);
+}
