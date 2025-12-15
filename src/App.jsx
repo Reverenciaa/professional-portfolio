@@ -11,6 +11,13 @@ import { Contact } from './components/sections/Contact'
 import { Footer } from './components/sections/Footer'
 import './index.css'
 
+const Home = lazy(() => import('./components/sections/Home'))
+const About = lazy(() => import('./components/sections/About'))
+const Certifications = lazy(() => import('./components/sections/Certifications'))
+const Projects = lazy(() => import('./components/sections/Projects'))
+const Contact = lazy(() => import('./components/sections/Contact'))
+const Footer = lazy(() => import('./components/sections/Footer'))
+
 function App() {
   const [isLoaded, setIsLoaded] = useState(false)
   const [menuOpen, setMenuOpen] = useState(false)

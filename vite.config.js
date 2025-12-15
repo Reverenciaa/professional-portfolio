@@ -5,5 +5,20 @@ import tailwindcss from '@tailwindcss/vite'
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss()],
-  base: '/professional-portfolio'
+  base: '/professional-portfolio/',
+  build: {
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          // Separate vendor libraries
+          vendor: ['react', 'react-dom'],
+          firebase: ['firebase/app', 'firebase/firestore'],
+          animation: ['framer-motion'],
+          icons: ['react-icons']
+        }
+      }
+    },
+    // Increase chunk size warning limit if needed
+    chunkSizeWarningLimit: 1000
+  }
 })
