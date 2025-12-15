@@ -1,16 +1,16 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, lazy } from 'react'
 import './App.css'
 import { LoadingScreen } from './components/LoadingScreen'
 import { Navbar } from './components/Navbar'
 import { MobileMenu } from './components/MobileMenu'
 import './index.css'
 
-const Home = lazy(() => import('./components/sections/Home'))
-const About = lazy(() => import('./components/sections/About'))
-const Certifications = lazy(() => import('./components/sections/Certifications'))
-const Projects = lazy(() => import('./components/sections/Projects'))
-const Contact = lazy(() => import('./components/sections/Contact'))
-const Footer = lazy(() => import('./components/sections/Footer'))
+const Home = lazy(() => import('./components/sections/Home').then(module => ({ default: module.Home })))
+const About = lazy(() => import('./components/sections/About').then(module => ({ default: module.About })))
+const Certifications = lazy(() => import('./components/sections/Certifications').then(module => ({ default: module.Certifications })))
+const Projects = lazy(() => import('./components/sections/Projects').then(module => ({ default: module.Projects })))
+const Contact = lazy(() => import('./components/sections/Contact').then(module => ({ default: module.Contact })))
+const Footer = lazy(() => import('./components/sections/Footer').then(module => ({ default: module.Footer })))
 
 function App() {
   const [isLoaded, setIsLoaded] = useState(false)

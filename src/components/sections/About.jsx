@@ -121,10 +121,10 @@ export const About = () => {
                 </RevealOnScroll>
             </section>
 
-            <section id="work-experience" className="min-h-screen flex items-center justify-center py-16 md:py-20 px-4 snap-start">
+            <section id="work-experience" className="h-screen flex items-center justify-center py-16 md:py-20 px-4 snap-start">
                 <RevealOnScroll>
                     <div className="max-w-6xl mx-auto">
-                        <h2 className="text-2xl md:text-4xl font-bold mb-8 md:mb-12 bg-gradient-to-r from-yellow-500 to-purple-500 bg-clip-text text-transparent text-center flex items-center justify-center gap-2 md:gap-3">
+                        <h2 className="text-2xl md:text-4xl font-bold mb-8 md:mb-12 bg-gradient-to-r from-yellow-500 to-purple-500 bg-clip-text text-transparent text-center flex items-center justify-center gap-2 md:gap-3 mt-12">
                             <span className="text-2xl md:text-4xl">💼</span>
                             Work Experience
                         </h2>
