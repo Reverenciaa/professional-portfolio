@@ -15,11 +15,11 @@ export const Footer = () => {
                             <FaGithub className="text-lg md:text-xl" />
                             <span className="text-xs md:text-sm">Github</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/christopherson-labios-967705254/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 hover:text-white transition-colors p-2">
+                        <a href="https://www.facebook.com/itsmelabiossi" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 hover:text-white transition-colors p-2">
                             <FaFacebook className="text-lg md:text-xl" />
                             <span className="text-xs md:text-sm">Facebook</span>
                         </a>
-                        <a href="https://www.linkedin.com/in/christopherson-labios-967705254/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 hover:text-white transition-colors p-2">
+                        <a href="https://www.instagram.com/itsmelabiossi/" target="_blank" rel="noopener noreferrer" className="flex flex-col items-center gap-2 hover:text-white transition-colors p-2">
                             <FaInstagram className="text-lg md:text-xl" />
                             <span className="text-xs md:text-sm">Instagram</span>
                         </a>
