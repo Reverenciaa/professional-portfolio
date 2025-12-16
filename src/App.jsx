@@ -18,20 +18,27 @@ function App() {
   const [showScrollTop, setShowScrollTop] = useState(false)
 
   useEffect (() => {
-    const handleScroll = () => {
-      if(window.scrollY > 300){
+    const handleScroll = (event) => {
+      const scrollTop = event.target.scrollTop;
+      if(scrollTop > 300){
         setShowScrollTop(true)
       } else {
         setShowScrollTop(false)
       }
     }
     
-    window.addEventListener('scroll', handleScroll)
-    return () => window.removeEventListener('scroll', handleScroll)
-  }, [])
+    const scrollContainer = document.querySelector('.scroll-container');
+    if (scrollContainer) {
+      scrollContainer.addEventListener('scroll', handleScroll);
+      return () => scrollContainer.removeEventListener('scroll', handleScroll);
+    }
+  }, [isLoaded])
 
   const scrollToTop = () => {
-    window.scrollTo({top: 0, behavior: 'smooth'})
+    const scrollContainer = document.querySelector('.scroll-container');
+    if (scrollContainer) {
+      scrollContainer.scrollTo({top: 0, behavior: 'smooth'});
+    }
   }
 
   return (
@@ -42,7 +49,7 @@ function App() {
         bg-black text-gray-100 relative overflow-hidden snap-y snap-mandatory`}>
 
         <div className='fixed top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-180 h-180 bg-gradient-to-r from-yellow-500/20 to-fuchsia-500/20 rounded-full filter blur-3xl z-0'></div>
-          <div className='relative z-10 h-screen overflow-y-auto snap-y snap-mandatory'>  
+          <div className='scroll-container relative z-10 h-screen overflow-y-auto snap-y snap-mandatory'>  
             <Navbar menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
             <MobileMenu menuOpen={menuOpen} setMenuOpen={setMenuOpen} />
             <div className="snap-start"><Home /></div>
@@ -55,7 +62,7 @@ function App() {
           {showScrollTop && (
             <button 
               onClick={scrollToTop}
-              className='bottom-16 right-16 fixed z-50 p-4 text-white border border-color-white rounded-lg hover:scale-110 transition-all'
+              className='bottom-16 right-16 fixed z-50 p-4 text-white border border-white rounded-lg hover:scale-110 transition-all'
               aria-label="Scroll to top"
             >
               ↑
