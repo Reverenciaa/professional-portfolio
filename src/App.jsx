@@ -66,7 +66,7 @@ function App() {
           {showScrollTop && (
             <button 
               onClick={scrollToTop}
-              className='bottom-16 right-16 fixed z-50 p-4 text-white border border-white rounded-lg hover:scale-110 transition-all'
+              className='bottom-16 right-16 fixed z-50 p-4 text-white border border-white rounded-lg hover:scale-110 transition-all hidden md:block'
               aria-label="Scroll to top"
             >
               ↑
